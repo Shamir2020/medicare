@@ -1,0 +1,61 @@
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100px;
+}
+
+.navInside {
+
+    width: 100%;
+    max-width: var(--max-width);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+ 
+
+}
+
+.navCol1{
+
+}
+
+.navCol2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.navCol2 ol{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+
+}
+.navCol2 a {
+    text-decoration: none;
+    color: black;
+    padding: 7px 15px;
+    font-weight: 500;
+
+}
+
+.navCol3{
+
+}
+
+.loginBtn{
+    padding: 7px 15px;
+    font-weight: 600;
+    font-size: 19px;
+    color: white;
+    background-color: rgb(3, 169, 175);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
