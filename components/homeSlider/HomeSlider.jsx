@@ -15,13 +15,14 @@ const HomeSlider = () => {
                         className="d-block w-100"
                         src="/doctor1.jpg"
                         width='1000'
-                        height='400'
+                        height='350'
                         alt="First slide"
                         style={{objectFit:"cover"}}
                     />
                     <Carousel.Caption>
                     <div className={styles.sliderCaption}>
-                            <h3>Best doctors available. Book an appointment and get your prescription</h3>
+                            <h4>Best doctors available. Just a video call away !</h4>
+                            <p>We have the best doctors available and you can easily consult with them.</p>
                             <Link href='/'><button className='btn btn-primary'>Book An Appointment</button></Link>
                         </div>
                     </Carousel.Caption>
@@ -32,14 +33,15 @@ const HomeSlider = () => {
                         className="d-block w-100"
                         src="/doctor2.avif"
                         width='1000'
-                        height='400'
+                        height='350'
                         alt="First slide"
                         style={{objectFit:"cover"}}
                     />
                     <Carousel.Caption>
                         <div className={styles.sliderCaption}>
-                            <h5>Second slide label</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <h5>Online heallthcare at affordable price !</h5>
+                            <p>Book an appointment at the most affordable price and consult with doctor.</p>
+                            <Link href='/'><button className='btn btn-info'>Book An Appointment</button></Link>
                         </div>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -49,14 +51,15 @@ const HomeSlider = () => {
                         className="d-block w-100"
                         src="/doctor3.avif"
                         width='1000'
-                        height='400'
+                        height='350'
                         alt="First slide"
                         style={{objectFit:"cover"}}
                     />
                     <Carousel.Caption>
                     <div className={styles.sliderCaption}>
-                            <h5>Second slide label</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <h5>Monthly healthcare plans</h5>
+                            <p>We have Monthly healthcare plans which you can subscribe to get health care services more easily.</p>
+                            <Link href='/'><button className='btn btn-info'>Get Subscription Now</button></Link>
                         </div>
                     </Carousel.Caption>
                 </Carousel.Item>

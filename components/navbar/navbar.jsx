@@ -1,14 +1,33 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import styles from './navbar.module.css'
 import 'bootstrap/dist/css/bootstrap.css'
+import { useEffect, useState } from "react"
 
 const Navbar = ()=>{
+
+    const [navFixed, setNavFixed] = useState(false)
+
+    useEffect(()=>{
+        const handleScroll = ()=> {
+            if (window.scrollY > 80){
+                setNavFixed(true)
+            }
+            else {
+                setNavFixed(false)
+            }
+        }
+        window.addEventListener('scroll', handleScroll)
+
+    },[])
+
     return (
-        <div className={styles.navbar}>
+        <div className={navFixed? `${styles.navbar} ${styles.fixed}` : styles.navbar}>
             <div className={styles.navInside}>
                 <div className={styles.navCol1}>
-                <Link href='/'><Image src='/logo.png' width={220} height={50} alt="error"/></Link>
+                <Link href='/'><h2 className={styles.logo}>Medicare</h2></Link>
                 </div>
                 
                 <div className={styles.navCol2}>

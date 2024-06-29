@@ -1,6 +1,6 @@
 .sliderCaption {
     background-color: rgba(128, 126, 126, 0.5);
-    height: 150px;
+    height: 100%;
     color: white;
     border-radius: 4px;
     padding: 40px;
@@ -8,4 +8,5 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }

@@ -2,10 +2,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 70px;
+    
 
-    height: 100px;
 }
-
+.fixed {
+    position: fixed;
+    width: 100%;
+    background-color: var(--accent);
+    z-index: 200;
+}
 .navInside {
 
     width: 100%;
@@ -19,7 +25,20 @@
 }
 
 .navCol1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navCol1 a {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
 
+.logo{
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
 }
 
 .navCol2{
