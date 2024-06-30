@@ -1,0 +1,51 @@
+/* App.css */
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .image-side {
+    flex: 1;
+    background-image: url('img.2.jpg'); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .form-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; /* White background for the form container */
+  }
+  
+  .form-container {
+    width: 80%; /* Adjust as needed */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border-color: #ccc;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .mt-4 {
+    margin-top: 32px;
+  }
+  
