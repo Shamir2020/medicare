@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        .dark-mode {
+            background-color: #1a202c;
+            color: #cbd5e0;
+        }
+        .dark-mode .bg-white {
+            background-color: #2d3748 !important;
+        }
+        .dark-mode .text-gray-900 {
+            color: #cbd5e0 !important;
+        }
+        .dark-mode .text-gray-600 {
+            color: #a0aec0 !important;
+        }
+        .dark-mode .bg-blue-50 {
+            background-color: #4a5568 !important;
+        }
+        .dark-mode .border-blue-300 {
+            border-color: #63b3ed !important;
+        }
+        .dark-mode .bg-green-500 {
+            background-color: #48bb78 !important;
+        }
+        .dark-mode .bg-red-500 {
+            background-color: #f56565 !important;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-blue-500 to-purple-600 transition-colors duration-300">
+    
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            
+            <div class="flex items-center space-x-4">
+                <img class="h-10" src="logo.png" alt="Logo">
+                <h1 class="text-xl font-semibold text-gray-800">Doctor Consultation</h1>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                
+                <button id="toggle-dark-mode" class="text-gray-800 dark:text-gray-200 text-xl focus:outline-none">
+                    <i id="toggle-icon" class="fas fa-moon"></i>
+                </button>
+                
+                <button class="bg-red-500 text-white py-2 px-4 rounded-lg shadow hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    
+    <div class="max-w-4xl mx-auto p-8 bg-white shadow-2xl rounded-3xl mt-10">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center">
+                <img class="w-32 h-32 rounded-full border-4 border-blue-300 shadow-lg" src="default-thumb.png" alt="User Profile Picture">
+                <div class="ml-6">
+                    <h1 class="text-4xl font-bold text-gray-900">Captain Goose</h1>
+                    <p class="text-lg text-gray-600">Member since: January 2020</p>
+                </div>
+            </div>
+            <div class="flex items-center">
+                <img id="qr-code" class="w-24 h-24 border-4 border-blue-300 shadow-lg mr-4" src="" alt="QR Code">
+            </div>
+        </div>
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="bg-blue-50 p-6 rounded-lg shadow-md personal-details">
+                <p><strong>Date of Birth:</strong> 01/01/2003</p>
+                <p><strong>Gender:</strong> Male</p>
+                <p><strong>Contact:</strong> 01712345678</p>
+                <p><strong>Address:</strong> Dahaka, Bangladesh</p>
+            </div>
+            <div class="bg-blue-50 p-6 rounded-lg shadow-md personal-details">
+                <p><strong>Emergency Contact:</strong> Lt. Swan - 01845612307</p>
+                <p><strong>Blood Group:</strong> B+</p>
+                <p><strong>Email:</strong> captain.goose@example.com</p>
+            </div>
+        </div>
+        <div class="mt-6 flex justify-end space-x-4">
+            <button class="bg-green-500 text-white py-2 px-4 rounded-lg shadow hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">Update Profile</button>
+            <button class="bg-red-500 text-white py-2 px-4 rounded-lg shadow hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75">Delete Account</button>
+        </div>
+    </div>
+
+    
+    <script>
+        const toggleDarkMode = document.getElementById('toggle-dark-mode');
+        const toggleIcon = document.getElementById('toggle-icon');
+        
+        toggleDarkMode.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            toggleIcon.classList.toggle('fa-moon');
+            toggleIcon.classList.toggle('fa-sun');
+        });
+
+        
+        const profileURL = 'http://127.0.0.1:5500/profile.html';  
+        document.getElementById('qr-code').src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(profileURL)}`;
+    </script>
+</body>
+</html>
