@@ -1,0 +1,192 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #4299e1, #667eea);
+    color: #1a202c;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dark-mode {
+    background-color: #1a202c;
+    color: #cbd5e0;
+  }
+  
+  .navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar .logo img {
+    height: 40px;
+    margin-right: 8px;
+  }
+  
+  .navbar .logo h1 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #2d3748;
+  }
+  
+  .navbar .actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar .actions button {
+    margin-left: 16px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .navbar .actions button.logout {
+    background-color: #f56565;
+    color: #fff;
+  }
+  
+  .navbar .actions button.logout:hover {
+    background-color: #e53e3e;
+  }
+  
+  .profile-container {
+    max-width: 64rem;
+    margin: 2.5rem auto;
+    padding: 32px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+  }
+  
+  .dark-mode .profile-container {
+    background-color: #2d3748;
+  }
+  
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .profile-header .profile-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-header .profile-info img {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    border: 4px solid #63b3ed;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-header .profile-info .profile-details {
+    margin-left: 24px;
+  }
+  
+  .profile-header .profile-info .profile-details h1 {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: #2d3748;
+  }
+  
+  .dark-mode .profile-header .profile-info .profile-details h1 {
+    color: #cbd5e0;
+  }
+  
+  .profile-header .profile-info .profile-details p {
+    font-size: 1.125rem;
+    color: #4a5568;
+  }
+  
+  .dark-mode .profile-header .profile-info .profile-details p {
+    color: #a0aec0;
+  }
+  
+  .profile-header .qr-code img {
+    width: 96px;
+    height: 96px;
+    border: 4px solid #63b3ed;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 32px;
+  }
+  
+  @media (min-width: 640px) {
+    .profile-content {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .profile-card {
+    background-color: #ebf8ff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dark-mode .profile-card {
+    background-color: #4a5568;
+  }
+  
+  .profile-card p {
+    font-size: 1rem;
+    color: #2d3748;
+  }
+  
+  .dark-mode .profile-card p {
+    color: #cbd5e0;
+  }
+  
+  .profile-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+  }
+  
+  .profile-actions button {
+    margin-left: 16px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .profile-actions button.update {
+    background-color: #48bb78;
+    color: #fff;
+  }
+  
+  .profile-actions button.update:hover {
+    background-color: #38a169;
+  }
+  
+  .profile-actions button.delete {
+    background-color: #f56565;
+    color: #fff;
+  }
+  
+  .profile-actions button.delete:hover {
+    background-color: #e53e3e;
+  }
+  
