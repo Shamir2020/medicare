@@ -311,6 +311,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .homeRow5Inside {
   display: flex;
@@ -342,6 +343,7 @@
   align-items: center;
   flex-direction: column;
   margin: 10px 0;
+  width: 100%;
 }
 .homeRow6Header{
   width: 100%;
@@ -351,7 +353,7 @@
 }
 .homeRow6Inside {
   width: 100%;
-  max-width: var(--max-width2);
+  max-width: calc(var(--max-width2) + 20px);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

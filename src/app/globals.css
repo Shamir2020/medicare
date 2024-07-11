@@ -52,5 +52,9 @@ body{
 
 
 .MedicareContainer{
-  min-height: 65vh;
+  min-height: 68vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

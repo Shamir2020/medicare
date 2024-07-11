@@ -1,0 +1,63 @@
+.updateProfile{
+    width: 100%;
+    max-width: 900px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.updateProfile form {
+    display: flex;
+    flex-direction: column;
+}
+.updateProfile form div {
+    display: flex;
+}
+.col1 {
+    width: 50%;
+    margin-right: 10px;
+}
+.col2{
+    margin-left: 10px;
+    width: 50%;
+}
+
+.col1, .col2{
+    display: flex;
+    flex-direction: column;
+}
+.updateProfile form button {
+    margin: 20px 0 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 2px solid var(--accent);
+    transition: 0.2s background-color ease-in;
+}
+.updateProfile form button:hover {
+    background-color: white;
+}
+
+.updateProfile input {
+    border: none;
+    border: 2px solid var(--accent);
+    font-size: 15px;
+    padding: 0 7px;
+    margin-bottom: 5px;
+}
+.updateProfile select {
+    padding: 0 7px;
+    margin-bottom: 5px;
+    border: 2px solid var(--accent);
+}
+
+@media screen and (max-width: 800px){
+    .updateProfile form div {
+        flex-direction: column;
+    }
+    .col1, .col2{
+        width: 100%;
+        margin: 0;
+    }
+}

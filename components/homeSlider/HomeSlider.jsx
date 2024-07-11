@@ -8,6 +8,7 @@ import styles from './styles.module.css'
 const HomeSlider = () => {
     return (
         <>
+            <div className={styles.sliderContainer1}>
             <Carousel data-bs-theme="dark">
                 <Carousel.Item>
                     <Image
@@ -64,6 +65,7 @@ const HomeSlider = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
+            </div>
         </>
     )
 }
