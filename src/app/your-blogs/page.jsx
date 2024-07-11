@@ -10,6 +10,9 @@ const YourBlogs = () => {
     const [role, setRole] = useState('')
     const router = useRouter()
 
+    const [blogs, setBlogs] = useState([])
+
+
     const FetchUserData = async () => {
         const response = await axios.get('/api/users/me')
         if (response.status == 200) {
@@ -18,11 +21,21 @@ const YourBlogs = () => {
             console.log(role)
         }
     }
+
+    const FetchAllBlogs = async () => {
+        const response = await axios.get('/api/getMyBlogs')
+        if (response.status == 200) {
+            setBlogs(response.data['blogs'])
+            console.log(response.data)
+
+        }
+    }
     useEffect(() => {
         FetchUserData()
+        FetchAllBlogs()
     }, [])
 
-    const MoveToCreateBlogPage = ()=>{
+    const MoveToCreateBlogPage = () => {
         router.push('/createBlog')
     }
 
@@ -34,13 +47,17 @@ const YourBlogs = () => {
                 </div>
                 <div className={styles.yourBlogsInside}>
 
-                    <div className={styles.blogCard}>
-                        <Image src='/fever.jpg' width='200' height='200' alt='Error' />
-                        <h5>Blog title</h5>
-                        <div>
-                            <button className={styles.manageBtns}>Edit</button><button className={styles.manageBtns}>Delete</button>
-                        </div>
-                    </div>
+                    {blogs && blogs.map((blog) => {
+                        return (
+                            <div className={styles.blogCard}>
+                                <Image src={`${blog.image}`} width='200' height='200' alt='Error' />
+                                <h5>{blog.title}</h5>
+                                <div>
+                                    <button className={styles.manageBtns}>Edit</button><button className={styles.manageBtns}>Delete</button>
+                                </div>
+                            </div>
+                        )
+                    })}
 
                 </div>
 
@@ -72,7 +89,7 @@ const YourBlogs = () => {
     else {
         return (
             <div className="nothing">
-                
+
             </div>
         )
     }
