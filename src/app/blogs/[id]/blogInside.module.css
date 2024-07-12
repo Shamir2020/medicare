@@ -1,0 +1,9 @@
+.blogInsidePage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.blogInsideInside {
+    width: 100%;
+    max-width: var(--max-width2);
+}

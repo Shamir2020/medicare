@@ -13,8 +13,6 @@ connectDB()
 export async function POST (request){
     try {
 
-        
-
         const req = await request.formData()
 
         console.log(req)

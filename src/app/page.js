@@ -1,10 +1,26 @@
+"use client"
 import Image from "next/image";
 import styles from "./page.module.css";
 import HomeSlider from "../../components/homeSlider/HomeSlider";
 import Link from "next/link";
 import Footer from "../../components/footer/footer";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Home() {
+
+  const [blogs, setBlogs] = useState([])
+  const FetchFeaturedBlogs = async () => {
+    const response = await axios.get('/api/featuredBlogs')
+
+    if (response.status == 200) {
+      setBlogs(response.data['blogs'])
+    }
+  }
+  useEffect(() => {
+    FetchFeaturedBlogs()
+  }, [])
+
   return (
     <>
       <HomeSlider />
@@ -200,100 +216,100 @@ export default function Home() {
             <div className={styles.homeRow4CardContainer}>
 
               <Link href=''>
-              <div className={styles.homeRow4Card}>
-              <Image src='/check-black.svg' height='20' width='20' alt="error" />
-                <h5>General Physician</h5>
-              </div>
+                <div className={styles.homeRow4Card}>
+                  <Image src='/check-black.svg' height='20' width='20' alt="error" />
+                  <h5>General Physician</h5>
+                </div>
               </Link>
 
               <Link href=''>
-              <div className={styles.homeRow4Card}>
-              <Image src='/check-black.svg' height='20' width='20' alt="error" />
-                <h5>Neurologist</h5>
-              </div>
+                <div className={styles.homeRow4Card}>
+                  <Image src='/check-black.svg' height='20' width='20' alt="error" />
+                  <h5>Neurologist</h5>
+                </div>
               </Link>
 
               <Link href=''>
-              <div className={styles.homeRow4Card}>
-                <Image src='/check-black.svg' height='20' width='20' alt="error" />
-                <h5>Pediatrics</h5>
-              </div>
+                <div className={styles.homeRow4Card}>
+                  <Image src='/check-black.svg' height='20' width='20' alt="error" />
+                  <h5>Pediatrics</h5>
+                </div>
               </Link>
 
               <Link href=''>
-              <div className={styles.homeRow4Card}>
-              <Image src='/check-black.svg' height='20' width='20' alt="error" />
-                <h5>Neurosurgery</h5>
-              </div>
+                <div className={styles.homeRow4Card}>
+                  <Image src='/check-black.svg' height='20' width='20' alt="error" />
+                  <h5>Neurosurgery</h5>
+                </div>
               </Link>
 
               <Link href=''>
-              <div className={styles.homeRow4Card}>
-              <Image src='/check-black.svg' height='20' width='20' alt="error" />
-                <h5>Endocrinology</h5>
-              </div>
+                <div className={styles.homeRow4Card}>
+                  <Image src='/check-black.svg' height='20' width='20' alt="error" />
+                  <h5>Endocrinology</h5>
+                </div>
               </Link>
 
               <Link href=''>
-              <div className={styles.homeRow4Card}>
-              <Image src='/check-black.svg' height='20' width='20' alt="error" />
-                <h5>Dermatology</h5>
-              </div>
+                <div className={styles.homeRow4Card}>
+                  <Image src='/check-black.svg' height='20' width='20' alt="error" />
+                  <h5>Dermatology</h5>
+                </div>
               </Link>
 
               <Link href=''>
-              <div className={styles.homeRow4Card}>
-              <Image src='/check-black.svg' height='20' width='20' alt="error" />
-                <h5>Psychiatry</h5>
-              </div>
+                <div className={styles.homeRow4Card}>
+                  <Image src='/check-black.svg' height='20' width='20' alt="error" />
+                  <h5>Psychiatry</h5>
+                </div>
               </Link>
 
               <Link href=''>
-              <div className={styles.homeRow4Card}>
-              <Image src='/check-black.svg' height='20' width='20' alt="error" />
-                <h5>Nephrology</h5>
-              </div>
+                <div className={styles.homeRow4Card}>
+                  <Image src='/check-black.svg' height='20' width='20' alt="error" />
+                  <h5>Nephrology</h5>
+                </div>
               </Link>
 
               <Link href=''>
-              <div className={styles.homeRow4Card}>
-              <Image src='/check-black.svg' height='20' width='20' alt="error" />
-                <h5>Obstetrics & Gyanaecology</h5>
-              </div>
+                <div className={styles.homeRow4Card}>
+                  <Image src='/check-black.svg' height='20' width='20' alt="error" />
+                  <h5>Obstetrics & Gyanaecology</h5>
+                </div>
               </Link>
 
               <Link href=''>
-              <div className={styles.homeRow4Card}>
-              <Image src='/check-black.svg' height='20' width='20' alt="error" />
-                <h5>Dentist</h5>
-              </div>
+                <div className={styles.homeRow4Card}>
+                  <Image src='/check-black.svg' height='20' width='20' alt="error" />
+                  <h5>Dentist</h5>
+                </div>
               </Link>
               <Link href=''>
-              <div className={styles.homeRow4Card}>
-              <Image src='/check-black.svg' height='20' width='20' alt="error" />
-                <h5>Cardiologist</h5>
-              </div>
-              </Link>
-
-              <Link href=''>
-              <div className={styles.homeRow4Card}>
-              <Image src='/check-black.svg' height='20' width='20' alt="error" />
-                <h5>General Surgery</h5>
-              </div>
+                <div className={styles.homeRow4Card}>
+                  <Image src='/check-black.svg' height='20' width='20' alt="error" />
+                  <h5>Cardiologist</h5>
+                </div>
               </Link>
 
               <Link href=''>
-              <div className={styles.homeRow4Card}>
-              <Image src='/check-black.svg' height='20' width='20' alt="error" />
-                <h5>Pulmonology</h5>
-              </div>
+                <div className={styles.homeRow4Card}>
+                  <Image src='/check-black.svg' height='20' width='20' alt="error" />
+                  <h5>General Surgery</h5>
+                </div>
               </Link>
 
               <Link href=''>
-              <div className={styles.homeRow4Card}>
-              <Image src='/check-black.svg' height='20' width='20' alt="error" />
-                <h5>Physiotherapy</h5>
-              </div>
+                <div className={styles.homeRow4Card}>
+                  <Image src='/check-black.svg' height='20' width='20' alt="error" />
+                  <h5>Pulmonology</h5>
+                </div>
+              </Link>
+
+              <Link href=''>
+                <div className={styles.homeRow4Card}>
+                  <Image src='/check-black.svg' height='20' width='20' alt="error" />
+                  <h5>Physiotherapy</h5>
+                </div>
               </Link>
 
             </div>
@@ -323,40 +339,20 @@ export default function Home() {
           <Link href=''><button className="btn btn-primary">View All Blogs</button></Link>
         </div>
         <div className={styles.homeRow6Inside}>
-          <div className={styles.homeRow6Card}>
-              <Image src='/heart-attack.jpg' height='200' width='200' alt="error" />
-              <h5>Reason behind the increased heart attacks</h5>
 
-              <Link href=''><button className="btn btn-primary">Read More</button></Link>
-          </div>
+          {blogs && blogs.map((blog) => {
+            return (
+              <div className={styles.homeRow6Card}>
+                <Image src={`${blog.image}`} width='200' height='200' alt='Error' />
+                <h5>{blog.title}</h5>
+                <div>
+                <Link href={`/blogs/${blog._id}`}><button className="btn btn-primary">Read More</button></Link>
+                </div>
+              </div>
+            )
+          })}
 
-          <div className={styles.homeRow6Card}>
-              <Image src='/heart-attack.jpg' height='200' width='200' alt="error" />
-              <h5>Reason behind the increased heart attacks</h5>
-
-              <Link href=''><button className="btn btn-primary">Read More</button></Link>
-          </div>
-
-          <div className={styles.homeRow6Card}>
-              <Image src='/heart-attack.jpg' height='200' width='200' alt="error" />
-              <h5>Reason behind the increased heart attacks</h5>
-
-              <Link href=''><button className="btn btn-primary">Read More</button></Link>
-          </div>
-
-          <div className={styles.homeRow6Card}>
-              <Image src='/heart-attack.jpg' height='200' width='200' alt="error" />
-              <h5>Reason behind the increased heart attacks</h5>
-
-              <Link href=''><button className="btn btn-primary">Read More</button></Link>
-          </div>
-
-          <div className={styles.homeRow6Card}>
-              <Image src='/heart-attack.jpg' height='200' width='200' alt="error" />
-              <h5>Reason behind the increased heart attacks</h5>
-
-              <Link href=''><button className="btn btn-primary">Read More</button></Link>
-          </div>
+          
         </div>
       </div>
 

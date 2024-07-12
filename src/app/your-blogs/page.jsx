@@ -39,6 +39,10 @@ const YourBlogs = () => {
         router.push('/createBlog')
     }
 
+    const ReadMore = (id) => {
+        router.push(`/blogs/${id}`)
+    }
+
     if (role == 'doctor') {
         return (
             <div className={styles.yourBlogsContainer}>
@@ -52,9 +56,14 @@ const YourBlogs = () => {
                             <div className={styles.blogCard}>
                                 <Image src={`${blog.image}`} width='200' height='200' alt='Error' />
                                 <h5>{blog.title}</h5>
+                                
+                                
                                 <div>
                                     <button className={styles.manageBtns}>Edit</button><button className={styles.manageBtns}>Delete</button>
                                 </div>
+
+                                <button onClick={(e)=>ReadMore(blog._id)} className={styles.readMoreBtn}>Read more</button>
+                            
                             </div>
                         )
                     })}

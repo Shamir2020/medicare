@@ -15,6 +15,10 @@ const BlogSchema = new mongoose.Schema({
     owner: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'users'
+    },
+    featured: {
+        type: Boolean,
+        default: false
     }
 })
 
