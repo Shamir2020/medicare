@@ -1,0 +1,37 @@
+.createBlogContainer{
+    display: flex;
+    flex-direction: column;
+    min-height: 65vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.createBlogContainerInside {
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 30px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.createBlogContainerInside form {
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.createBlogBtn{
+    border: none;
+    background-color: var(--accent);
+    width: 100%;
+    border-radius: 4px;
+    padding: 3px 10px;
+    font-weight: 600;
+    border: 2px solid var(--accent);
+    margin: 20px auto;
+}
+.createBlogBtn:hover {
+    background-color: white;
+}

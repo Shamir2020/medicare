@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import styles from './blogInside.module.css'
 
+
 const BlogInside = ( {params} ) =>{
 
     const id = params.id 

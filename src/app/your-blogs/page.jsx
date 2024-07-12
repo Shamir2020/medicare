@@ -1,14 +1,20 @@
 "use client"
 import styles from './yourblogs.module.css'
+import './yourblogs.module.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import './yourblogs.css'
+import toast from 'react-hot-toast'
+
 
 const YourBlogs = () => {
     const [role, setRole] = useState('')
     const router = useRouter()
+
+    const [isClient, setIsClient] = useState(false)
 
     const [blogs, setBlogs] = useState([])
 
@@ -33,6 +39,7 @@ const YourBlogs = () => {
     useEffect(() => {
         FetchUserData()
         FetchAllBlogs()
+        setIsClient(true)
     }, [])
 
     const MoveToCreateBlogPage = () => {
@@ -43,6 +50,26 @@ const YourBlogs = () => {
         router.push(`/blogs/${id}`)
     }
 
+    const EditBlogPage = (id) => {
+        router.push(`/updateBlog/${id}`)
+    }
+
+    const DeletePrompt= async (id, index)=>{
+        const confirmed = confirm('Are you sure to Delete ?')
+
+        if (confirmed){
+            const response = await axios.delete(`/api/getMyBlogs/${id}`)
+
+            if (response.status == 200){
+                toast.success('Blog has been deleted')
+                router.refresh()
+                window.location.reload()
+                
+            }
+        }
+        
+    }
+
     if (role == 'doctor') {
         return (
             <div className={styles.yourBlogsContainer}>
@@ -51,15 +78,18 @@ const YourBlogs = () => {
                 </div>
                 <div className={styles.yourBlogsInside}>
 
-                    {blogs && blogs.map((blog) => {
+                    {blogs && blogs.map((blog, index) => {
                         return (
                             <div className={styles.blogCard}>
+
+
                                 <Image src={`${blog.image}`} width='200' height='200' alt='Error' />
                                 <h5>{blog.title}</h5>
                                 
                                 
                                 <div>
-                                    <button className={styles.manageBtns}>Edit</button><button className={styles.manageBtns}>Delete</button>
+                                    <button onClick={(e)=>EditBlogPage(blog._id)} className={styles.manageBtns}>Edit</button>
+                                    <button onClick={(e)=>DeletePrompt(blog._id, index)} className={styles.manageBtns}>Delete</button>
                                 </div>
 
                                 <button onClick={(e)=>ReadMore(blog._id)} className={styles.readMoreBtn}>Read more</button>

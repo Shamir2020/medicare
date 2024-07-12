@@ -7,7 +7,9 @@
     height: 60vh;
 }
 .yourBlogHeader{
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .yourBlogsInside{
     width: 100%;
@@ -23,7 +25,43 @@
     padding: 20px;
     height: 350px;
     margin: 10px;
+    position: relative;
 }
+
+.blogCard .deletePrompt{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    display: none;
+}
+.yes {
+    background-color: var(--accent);
+    font-size: 15px;
+    font-weight: 600;
+    border:2px solid var(--accent);
+    border-radius: 4px;
+}
+.no {
+    background-color: coral;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border:2px solid coral;
+    border-radius: 4px;
+}
+.yes:hover, .no:hover {
+    background-color: white;
+    color: black;
+}
+
 .blogCard h5{
     font-size: 15px;
 }
